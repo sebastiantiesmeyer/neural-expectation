@@ -1,0 +1,16 @@
+model_name: EleutherAI/pythia-160m
+device: auto
+dtype: auto
+
+layers:
+  - 2
+  - 6
+  - 10
+
+projection_dim: 32
+projection_seed: 42
+
+sidecar:
+  type: recursive_least_squares
+  forgetting_factor: 0.995
+  regularization: 1.0

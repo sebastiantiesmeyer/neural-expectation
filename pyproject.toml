@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "transformer-surprise"
+version = "0.1.0"
+description = "A lightweight online expectation sidecar for frozen transformer activations."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "numpy>=1.24",
+  "pyyaml>=6.0",
+  "torch>=2.0",
+  "transformers>=4.35",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+notebook = ["jupyter>=1.0", "matplotlib>=3.7"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
